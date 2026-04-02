@@ -15,12 +15,12 @@ const valorC = computed(() => counterText.value.length)
 
 <!-- ---- TEMPLATE ---- -->
 <template>
-    <div class="home">
-        <div class="card">
-            <input v-model="counterText" type="text" placeholder="Digite algo...">
-            <span class="resposta">Quantidade de caracteres: {{ valorC }}</span>
-        </div>
+  <div class="home">
+    <div class="card">
+      <input v-model="counterText" type="text" placeholder="Digite algo...">
+      <span class="resposta">Quantidade de caracteres: {{ valorC }}</span>
     </div>
+  </div>
 </template>
 <!-- ---- TEMPLATE ---- -->
 

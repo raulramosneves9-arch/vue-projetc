@@ -13,17 +13,17 @@ const valorArray = ref(0)
 const name = computed(() => namesArray[valorArray.value])
 
 const modificadorText = computed({
-    get: () => namesArray[valorArray.value],
-    set: (val) => { namesArray[valorArray.value] = val }
+  get: () => namesArray[valorArray.value],
+  set: (val) => { namesArray[valorArray.value] = val }
 })
 
 // ---- FUNCTIONS ----
 function nameChange() {
-    if (valorArray.value < namesArray.length - 1) valorArray.value++
+  if (valorArray.value < namesArray.length - 1) valorArray.value++
 }
 
 function nameBack() {
-    if (valorArray.value > 0) valorArray.value--
+  if (valorArray.value > 0) valorArray.value--
 }
 
 </script>
@@ -31,18 +31,18 @@ function nameBack() {
 
 <!-- ---- TEMPLATE ---- -->
 <template>
-    <div class="react">
-        <div>
-            <span>{{ appTitle }}</span>
-            <hr>
-            <button class="btn" @click="nameBack">Voltar</button>
-            <span>Mude meu nome: {{ name }}</span>
-            <button class="btn" @click="nameChange">Avançar</button>
-            <hr>
-            <span>Digite um nome da qual queira modificar:</span>
-            <input v-model="modificadorText" type="text">
-        </div>
+  <div class="react">
+    <div>
+      <span>{{ appTitle }}</span>
+      <hr>
+      <button class="btn" @click="nameBack">Voltar</button>
+      <span>Mude meu nome: {{ name }}</span>
+      <button class="btn" @click="nameChange">Avançar</button>
+      <hr>
+      <span>Digite um nome da qual queira modificar:</span>
+      <input v-model="modificadorText" type="text">
     </div>
+  </div>
 </template>
 <!-- ---- TEMPLATE ---- -->
 
