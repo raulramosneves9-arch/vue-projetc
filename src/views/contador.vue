@@ -88,7 +88,7 @@ span {
   opacity: 0.85;
   transform: scale(1.05);
 }
-a
+
 .btn:nth-child(1) { background-color: #4ecca3; color: #1a1a2e; }
 .btn:nth-child(2) { background-color: #4ecca3; color: #1a1a2e; }
 .btn:nth-child(3) { background-color: #e94560; color: #fff; }
