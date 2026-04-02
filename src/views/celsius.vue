@@ -18,7 +18,7 @@ const fahrenheit = computed(() => {
 <!-- ---- TEMPLATE ---- -->
 <template>
     <div class="home">
-        <div class="card">
+        <div class="card">a
             <span class="title">Mudando de Celsius para Fahrenheit</span>
             <input v-model.number="celsiusNumber" type="number" placeholder="Digite °C">
             <span class="resposta">Convertendo: {{ fahrenheit }}°F</span>
