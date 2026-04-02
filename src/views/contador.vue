@@ -1,3 +1,34 @@
+<!-- ---- SCRIPT ---- -->
+<script setup>
+
+// ---- IMPORTS ----
+import { reactive } from 'vue'
+
+// ---- DATA ----
+const counterData = reactive({
+    count: 0
+})
+
+// ---- FUNCTIONS ----
+function incrementar(amount) {
+    counterData.count += amount
+}
+
+function decrementar(amount) {
+    counterData.count -= amount
+}
+
+function dobrar() {
+    counterData.count = counterData.count * 2
+}
+
+function dividir() {
+    counterData.count = counterData.count / 2
+}
+
+</script>
+<!-- ---- SCRIPT ---- -->
+
 <!-- ---- TEMPLATE ---- -->
 <template>
     <div class="home">
@@ -13,36 +44,6 @@
     </div>
 </template>
 <!-- ---- TEMPLATE ---- -->
-
-<!-- ---- SCRIPT ---- -->
-<script setup>
-
-// ---- IMPORTS ----
-import { reactive, ref } from 'vue'
-
-// ---- DATA ----
-const counterData = reactive ({
-  count:0
-})
-// ---- FUNCTIONS ----
-function incrementar (amount) {
-  counterData.count += amount
-}
-
-function decrementar(amount) {
-  counterData.count -= amount
-}
-
-function dobrar() {
-  counterData.count = counterData.count * 2
-}
-
-function dividir() {
-  counterData.count = counterData.count / 2
-}
-
-</script>
-<!-- ---- SCRIPT ---- -->
 
 <!-- ---- STYLE ---- -->
 <style scoped>
@@ -80,17 +81,19 @@ span {
   cursor: pointer;
   font-weight: bold;
   transition: transform 0.1s, opacity 0.2s;
+  width: 100%;
 }
 
 .btn:hover {
   opacity: 0.85;
   transform: scale(1.05);
 }
-.btn:nth-child(1) { background-color: #4ecca3; color: #1a1a2e; }
-.btn:nth-child(2) { background-color: #e94560; color: #fff; }
-.btn:nth-child(3) { background-color: #f5a623; color: #1a1a2e; }
-.btn:nth-child(4) { background-color: #a855f7; color: #fff; }
-.btn:nth-child(5) { background-color: #a855f7; color: #fff; }
 
+.btn:nth-child(1) { background-color: #4ecca3; color: #1a1a2e; }
+.btn:nth-child(2) { background-color: #4ecca3; color: #1a1a2e; }
+.btn:nth-child(3) { background-color: #e94560; color: #fff; }
+.btn:nth-child(4) { background-color: #e94560; color: #fff; }
+.btn:nth-child(5) { background-color: #f5a623; color: #1a1a2e; }
+.btn:nth-child(6) { background-color: #a855f7; color: #fff; }
 </style>
 <!-- ---- STYLE ---- -->

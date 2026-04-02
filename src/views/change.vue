@@ -1,3 +1,34 @@
+<!-- ---- SCRIPT ---- -->
+<script setup>
+
+// ---- IMPORTS ----
+import { reactive, ref, computed } from 'vue'
+
+// ---- DATA ----
+const appTitle = 'Merda (um titulo merda)'
+const namesArray = reactive(['Raul', 'Rafa', 'Fernanda', 'Lucas', 'Mariana', 'Pedro', 'Juliana', 'Carlos', 'Beatriz', 'Thiago'])
+const valorArray = ref(0)
+
+// ---- COMPUTED ----
+const name = computed(() => namesArray[valorArray.value])
+
+const modificadorText = computed({
+    get: () => namesArray[valorArray.value],
+    set: (val) => { namesArray[valorArray.value] = val }
+})
+
+// ---- FUNCTIONS ----
+function nameChange() {
+    if (valorArray.value < namesArray.length - 1) valorArray.value++
+}
+
+function nameBack() {
+    if (valorArray.value > 0) valorArray.value--
+}
+
+</script>
+<!-- ---- SCRIPT ---- -->
+
 <!-- ---- TEMPLATE ---- -->
 <template>
     <div class="react">
@@ -9,43 +40,11 @@
             <button class="btn" @click="nameChange">Avançar</button>
             <hr>
             <span>Digite um nome da qual queira modificar:</span>
-            <input v-model="counterData.title" type="text">
+            <input v-model="modificadorText" type="text">
         </div>
     </div>
 </template>
 <!-- ---- TEMPLATE ---- -->
-
-<!-- ---- SCRIPT ---- -->
-<script setup>
-
-// ---- IMPORTS ----
-import { reactive, ref, computed } from 'vue'
-
-// ---- DATA ----
-const counterData = reactive ({
-  title: computed({
-  get: () => namesArray[valorArray.value],
-  set: (val) => { namesArray[valorArray.value] = val }
-  })
-})
-const appTitle = 'Merda (um titulo merda)'
-const namesArray = reactive(['Raul', 'Rafa', 'Fernanda', 'Lucas', 'Mariana', 'Pedro', 'Juliana', 'Carlos', 'Beatriz', 'Thiago'])
-const valorArray = ref(0)
-
-// ---- COMPUTED ----
-const name = computed(() => namesArray[valorArray.value])
-
-// ---- FUNCTIONS ----
-function nameChange() {
-  if (valorArray.value < namesArray.length - 1) valorArray.value++
-}
-
-function nameBack() {
-  if (valorArray.value > 0) valorArray.value--
-}
-
-</script>
-<!-- ---- SCRIPT ---- -->
 
 <!-- ---- STYLE ---- -->
 <style scoped>
