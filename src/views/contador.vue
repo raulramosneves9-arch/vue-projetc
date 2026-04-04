@@ -2,7 +2,7 @@
 <script setup>
 
 // ---- IMPORTS ----
-import { reactive, watch, computed } from 'vue'
+import { reactive, watch, computed, onMounted, onUpdated } from 'vue'
 
 // ---- DATA ----
 const counterData = reactive({
@@ -31,6 +31,18 @@ watch(() => counterData.count, (newCount) => {
     if (newCount >= 20) {
         alert("WOW CONSEGUIU ATINGIR 20!!!")
     }
+})
+
+onMounted(() => {
+    console.log("Contador montado com sucesso!")
+})
+
+onUpdated(() => {
+    console.log("Contador atualizado. Valor atual: " + counterData.count)
+})
+
+onUnmounted(() => {
+    console.log("Contador desmontado.")
 })
 </script>
 <!-- ---- SCRIPT ---- -->
