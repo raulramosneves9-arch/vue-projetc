@@ -2,7 +2,7 @@
 <script setup>
 
 // ---- IMPORTS ----
-import { reactive, watch, computed, onMounted, onUpdated } from 'vue'
+import { reactive, watch, onMounted, onUpdated, onUnmounted } from 'vue'
 
 // ---- DATA ----
 const counterData = reactive({
@@ -29,7 +29,7 @@ function dividir() {
 
 watch(() => counterData.count, (newCount) => {
     if (newCount >= 20) {
-        alert("WOW CONSEGUIU ATINGIR 20!!!")
+        console.log("WOW CONSEGUIU ATINGIR 20!!!")
     }
 })
 
